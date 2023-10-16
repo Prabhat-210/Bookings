@@ -53,7 +53,7 @@ func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData)
 func CreateTemplateCache() (map[string]*template.Template, error) {
 	myCache := map[string]*template.Template{} //empty map
 	//get all of the files named *.page.tmpl from ./template
-	pages, err := filepath.Glob("/home/prabhat.rawat@npci.org.in/Documents/API_Learnings/GO_by_Trevor Sawler/Day2/templates/*.page.tmpl")
+	pages, err := filepath.Glob("/home/prabhat.rawat@npci.org.in/Desktop/Bookings/templates/*.page.tmpl")
 	if err != nil {
 		return myCache, err
 	}
@@ -64,13 +64,13 @@ func CreateTemplateCache() (map[string]*template.Template, error) {
 		if err != nil {
 			return myCache, err
 		}
-		matches, err := filepath.Glob("/home/prabhat.rawat@npci.org.in/Documents/API_Learnings/GO_by_Trevor Sawler/Day2/templates/*.layout.tmpl")
+		matches, err := filepath.Glob("/home/prabhat.rawat@npci.org.in/Desktop/Bookings/templates/*.layout.tmpl")
 		if err != nil {
 			return myCache, err
 		}
 
 		if len(matches) > 0 {
-			ts, err = ts.ParseGlob("/home/prabhat.rawat@npci.org.in/Documents/API_Learnings/GO_by_Trevor Sawler/Day2/templates/*.layout.tmpl")
+			ts, err = ts.ParseGlob("/home/prabhat.rawat@npci.org.in/Desktop/Bookings/templates/*.layout.tmpl")
 			if err != nil {
 				return myCache, err
 			}
